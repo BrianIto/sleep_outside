@@ -10,10 +10,14 @@ const productList = new ProductList(
 
 productList.init();
 
-const headerTemplate = await loadTemplate("../partials/header.html");
-const headerElement = document.querySelector("header");
-renderWithTemplate(headerTemplate, headerElement);
+async function populateHeaderAndFooter() {
+  const headerTemplate = await loadTemplate("../partials/header.html");
+  const headerElement = document.querySelector("header");
+  renderWithTemplate(headerTemplate, headerElement);
 
-const footerTemplate = await loadTemplate("../partials/footer.html");
-const footerElement = document.querySelector("footer");
-renderWithTemplate(footerTemplate, footerElement);
+  const footerTemplate = await loadTemplate("../partials/footer.html");
+  const footerElement = document.querySelector("footer");
+  renderWithTemplate(footerTemplate, footerElement);
+}
+
+populateHeaderAndFooter();
