@@ -21,7 +21,8 @@ export default class ProductDetails {
     color.innerHTML = this.product.Colors.map((e) => e.ColorName).join(" ");
     brand.innerHTML = this.product.Brand.Name;
     title.innerHTML = this.product.NameWithoutBrand;
-    image.src = this.product.Image;
+    image.src = this.product.Images.PrimaryLarge;
+    image.alt = this.product.Name;
     description.innerHTML = this.product.DescriptionHtmlSimple;
     addToCart.setAttribute("data-id", this.product.Id);
   }
